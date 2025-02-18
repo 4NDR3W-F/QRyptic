@@ -7,6 +7,7 @@ The same model can be used to simulate multiple qubit gates which is something t
 
 ## Contents
 
+*in order of importance*
 1) Functions
 2) Pulses
 3) Unity Gate

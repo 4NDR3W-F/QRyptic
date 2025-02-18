@@ -1,0 +1,26 @@
+import numpy as np
+from functions import gate
+from math import *
+from pulses import double_square
+from matplotlib import pyplot as plt
+
+
+STEPS    = 1000
+DURATION = 100
+DELTA    = 0
+
+time=np.linspace(0,100,STEPS+1)
+dt = time[2] -time[0]
+    
+omega= double_square(time=time, 
+                     duration1=DURATION/2,
+                     duration2=DURATION/2,
+                     area1=pi,
+                     area2=pi/2*e**(-1.j*pi/2))
+
+plt.plot(time, np.real(omega))
+plt.plot(time, np.imag(omega))
+# plt.show()
+GATE=gate(time=time, omega3=omega, delta=DELTA)
+
+print(GATE)
